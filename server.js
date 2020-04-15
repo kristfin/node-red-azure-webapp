@@ -11,10 +11,11 @@ var settings=require("./settings.js");
 
 RED.init(server,settings);
 
+console.log(settings);
 app.use(settings.httpAdminRoot,RED.httpAdmin);
 app.use(settings.httpNodeRoot,RED.httpNode);
  
- server.listen(settings.uiPort);
+server.listen(settings.uiPort);
 console.log(`listening port:${settings.uiPort}`);
 RED.start();
 
